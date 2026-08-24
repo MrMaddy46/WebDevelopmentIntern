@@ -1,0 +1,390 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BASE
+========================= */
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --background: #f1f5f9;
+    --surface: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --danger: #dc2626;
+    --success: #16a34a;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.todo-container {
+    width: min(92%, 700px);
+
+    margin: 0 auto;
+
+    padding: 40px 0;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.todo-header {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.todo-header h1 {
+    font-size: 2.5rem;
+
+    color: var(--primary);
+}
+
+.todo-header p {
+    color: var(--muted);
+
+    margin-top: 8px;
+}
+
+
+/* =========================
+   APP CARD
+========================= */
+
+.todo-app {
+    background: var(--surface);
+
+    padding: 30px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.todo-app h2 {
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+#task-form label {
+    display: block;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+.input-group {
+    display: flex;
+
+    gap: 10px;
+}
+
+#task-input {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 12px 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    font-size: 1rem;
+}
+
+#task-input:focus {
+    outline: 3px solid rgba(37, 99, 235, 0.2);
+
+    border-color: var(--primary);
+}
+
+.input-group button {
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.input-group button:hover {
+    background: var(--primary-dark);
+}
+
+
+/* =========================
+   FILTERS
+========================= */
+
+.filters {
+    display: flex;
+
+    gap: 10px;
+
+    margin: 25px 0;
+
+    padding: 0;
+
+    background: transparent;
+}
+
+.filter-btn {
+    border: 1px solid var(--border);
+
+    background: white;
+
+    color: var(--text);
+
+    padding: 8px 16px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    font-weight: 500;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary);
+
+    color: var(--primary);
+}
+
+.filter-btn.active {
+    background: var(--primary);
+
+    color: white;
+
+    border-color: var(--primary);
+}
+
+
+/* =========================
+   TASK LIST
+========================= */
+
+.task-list {
+    list-style: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* =========================
+   TASK ITEM
+========================= */
+
+.task-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--surface);
+}
+
+
+/* =========================
+   CHECKBOX
+========================= */
+
+.task-checkbox {
+    width: 18px;
+
+    height: 18px;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   TASK TEXT
+========================= */
+
+.task-text {
+    flex: 1;
+
+    word-break: break-word;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+
+    color: var(--muted);
+}
+
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.task-actions {
+    display: flex;
+
+    gap: 6px;
+}
+
+.task-actions button {
+    border: none;
+
+    padding: 7px 10px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 0.9rem;
+}
+
+.edit-btn {
+    background: #dbeafe;
+
+    color: #1d4ed8;
+}
+
+.delete-btn {
+    background: #fee2e2;
+
+    color: var(--danger);
+}
+
+.task-actions button:hover {
+    opacity: 0.8;
+}
+
+
+/* =========================
+   TASK COUNT
+========================= */
+
+.task-count {
+    margin-top: 20px;
+
+    color: var(--muted);
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-message {
+    text-align: center;
+
+    padding: 30px;
+
+    color: var(--muted);
+}
+
+
+/* =========================
+   FOCUS ACCESSIBILITY
+========================= */
+
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #38bdf8;
+
+    outline-offset: 2px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .todo-container {
+        padding: 20px 0;
+    }
+
+    .todo-app {
+        padding: 20px;
+    }
+
+    .todo-header h1 {
+        font-size: 2rem;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    .input-group button {
+        width: 100%;
+    }
+
+    .filters {
+        flex-wrap: wrap;
+    }
+
+    .task-item {
+        align-items: flex-start;
+    }
+
+    .task-actions {
+        flex-direction: column;
+    }
+
+}
