@@ -1,0 +1,397 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+
+    --primary: #2563eb;
+
+    --primary-dark: #1d4ed8;
+
+    --background: #eff6ff;
+
+    --surface: #ffffff;
+
+    --text: #1e293b;
+
+    --muted: #64748b;
+
+    --border: #dbeafe;
+
+    --error: #dc2626;
+
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dbeafe,
+            #eff6ff
+        );
+
+    color: var(--text);
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.weather-container {
+
+    width: min(92%, 900px);
+
+    margin: auto;
+
+    padding: 40px 0;
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.weather-header {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+.weather-header h1 {
+
+    font-size: 2.5rem;
+
+    color: var(--primary);
+
+}
+
+.weather-header p {
+
+    color: var(--muted);
+
+    margin-top: 8px;
+
+}
+
+
+/* =========================
+   SEARCH SECTION
+========================= */
+
+.search-section {
+
+    background: var(--surface);
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.08);
+
+}
+
+.search-section h2 {
+
+    margin-bottom: 15px;
+
+}
+
+.search-section label {
+
+    display: block;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+
+}
+
+.search-box {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+.search-box input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 13px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    font-size: 1rem;
+
+}
+
+.search-box input:focus {
+
+    outline: 3px solid
+        rgba(37, 99, 235, 0.2);
+
+    border-color: var(--primary);
+
+}
+
+.search-box button {
+
+    border: none;
+
+    background: var(--primary);
+
+    color: white;
+
+    padding: 13px 22px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+}
+
+.search-box button:hover {
+
+    background: var(--primary-dark);
+
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+
+    min-height: 30px;
+
+    text-align: center;
+
+    margin: 20px 0;
+
+    font-weight: 600;
+
+}
+
+.status.error {
+
+    color: var(--error);
+
+}
+
+
+/* =========================
+   WEATHER RESULT
+========================= */
+
+.weather-result {
+
+    background: var(--surface);
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.08);
+
+}
+
+.location-header {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+.location-header h2 {
+
+    font-size: 2rem;
+
+    color: var(--primary);
+
+}
+
+.location-header p {
+
+    color: var(--muted);
+
+}
+
+
+/* =========================
+   WEATHER GRID
+========================= */
+
+.weather-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+}
+
+
+/* =========================
+   WEATHER CARD
+========================= */
+
+.weather-card {
+
+    text-align: center;
+
+    padding: 25px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+
+    transition: transform 0.3s ease;
+
+}
+
+.weather-card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+.weather-card h3 {
+
+    color: var(--muted);
+
+    margin-bottom: 10px;
+
+}
+
+.weather-value {
+
+    display: inline;
+
+    font-size: 2.5rem;
+
+    font-weight: 700;
+
+    color: var(--primary);
+
+}
+
+.weather-card span {
+
+    font-size: 1.2rem;
+
+    color: var(--muted);
+
+}
+
+
+/* =========================
+   TIME
+========================= */
+
+.weather-time {
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: var(--muted);
+
+}
+
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+button:focus-visible,
+input:focus-visible {
+
+    outline: 3px solid #38bdf8;
+
+    outline-offset: 3px;
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (min-width: 600px) {
+
+    .weather-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 900px) {
+
+    .weather-container {
+
+        padding-top: 70px;
+
+    }
+
+    .weather-header h1 {
+
+        font-size: 3rem;
+
+    }
+
+}
